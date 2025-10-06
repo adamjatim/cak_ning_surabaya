@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import './batik-patterns.css';
+
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@plugin "daisyui";
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-roboto: "Roboto", sans-serif;
+    --font-quicksand: "Quicksand", sans-serif;
+
+    --color-olive-50: #f8f5ed;
+    --color-olive-100: #f0ebd7;
+    --color-olive-200: #e2d9b4;
+    --color-olive-300: #cfc287;
+    --color-olive-400: #baac61;
+    --color-olive-500: #9f9243;
+    --color-olive-600: #7e7432;
+    --color-olive-700: #655f2c;
+    --color-olive-800: #4e4a26;
+    --color-olive-900: #434024;
+    --color-olive-950: #24230f;
+
+    --color-pumpkin-50: #fff7ed;
+    --color-pumpkin-100: #ffedd4;
+    --color-pumpkin-200: #ffd7a8;
+    --color-pumpkin-300: #ffb970;
+    --color-pumpkin-400: #ff9037;
+    --color-pumpkin-500: #ff7415;
+    --color-pumpkin-600: #f05506;
+    --color-pumpkin-700: #c73e07;
+    --color-pumpkin-800: #9e310e;
+    --color-pumpkin-900: #7f2c0f;
+    --color-pumpkin-950: #451305;
+
+    --color-merino-50: #faf7f2;
+    --color-merino-100: #f6f1e7;
+    --color-merino-200: #e7d9c1;
+    --color-merino-300: #d8bf99;
+    --color-merino-400: #c79f70;
+    --color-merino-500: #bb8854;
+    --color-merino-600: #ad7549;
+    --color-merino-700: #905e3e;
+    --color-merino-800: #754d37;
+    --color-merino-900: #5f402f;
+    --color-merino-950: #332017;
+
+    --color-sunshade-50: #fef8ee;
+    --color-sunshade-100: #fef0d6;
+    --color-sunshade-200: #fbdcad;
+    --color-sunshade-300: #f9c278;
+    --color-sunshade-400: #f59e42;
+    --color-sunshade-500: #f2821d;
+    --color-sunshade-600: #e36713;
+    --color-sunshade-700: #bc4e12;
+    --color-sunshade-800: #963e16;
+    --color-sunshade-900: #793515;
+    --color-sunshade-950: #411909;
+
+}
+
+@layer components {
+    /* .quicksand-<uniquifier> {
+        font-family: "Quicksand", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+    }
+
+    .roboto-<uniquifier> {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: <weight>;
+        font-style: normal;
+        font-variation-settings:
+        "wdth" 100;
+    } */
+}

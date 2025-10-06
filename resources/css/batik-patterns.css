@@ -1,0 +1,177 @@
+/* ===================================== */
+/* BATIK PATTERN STYLES                 */
+/* Indonesian Cultural Heritage Patterns */
+/* ===================================== */
+
+/* Base Batik Patterns - Subtle untuk background */
+.batik-pattern-1 {
+    background-image:
+        radial-gradient(circle at 20px 30px, rgba(245, 158, 11, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 40px 70px, rgba(245, 158, 11, 0.08) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(245, 158, 11, 0.02) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(245, 158, 11, 0.02) 25%, transparent 25%);
+    background-size: 60px 60px, 80px 80px, 40px 40px, 40px 40px;
+}
+
+.batik-pattern-2 {
+    background-image:
+        radial-gradient(circle at 25px 25px, rgba(245, 158, 11, 0.15) 3px, transparent 3px),
+        radial-gradient(circle at 50px 0px, rgba(245, 158, 11, 0.1) 2px, transparent 2px),
+        radial-gradient(circle at 0px 50px, rgba(245, 158, 11, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px, 100px 50px, 50px 100px;
+}
+
+.batik-pattern-3 {
+    background-image:
+        repeating-linear-gradient(45deg, rgba(245, 158, 11, 0.03) 0px, rgba(245, 158, 11, 0.03) 2px, transparent 2px, transparent 10px),
+        repeating-linear-gradient(-45deg, rgba(245, 158, 11, 0.05) 0px, rgba(245, 158, 11, 0.05) 1px, transparent 1px, transparent 8px),
+        radial-gradient(circle at 30px 30px, rgba(245, 158, 11, 0.1) 2px, transparent 2px);
+    background-size: 20px 20px, 16px 16px, 60px 60px;
+}
+
+.batik-pattern-4 {
+    background-image:
+        radial-gradient(ellipse at 40px 40px, rgba(245, 158, 11, 0.12) 4px, transparent 4px),
+        radial-gradient(ellipse at 80px 0px, rgba(245, 158, 11, 0.08) 2px, transparent 2px),
+        radial-gradient(ellipse at 0px 80px, rgba(245, 158, 11, 0.06) 3px, transparent 3px),
+        linear-gradient(90deg, rgba(245, 158, 11, 0.02) 50%, transparent 50%);
+    background-size: 80px 80px, 120px 60px, 60px 120px, 40px 40px;
+}
+
+.batik-pattern-5 {
+    background-image:
+        conic-gradient(from 45deg at 50px 50px, rgba(245, 158, 11, 0.1) 0deg, transparent 90deg, rgba(245, 158, 11, 0.05) 180deg, transparent 270deg),
+        radial-gradient(circle at 25px 75px, rgba(245, 158, 11, 0.08) 2px, transparent 2px),
+        radial-gradient(circle at 75px 25px, rgba(245, 158, 11, 0.06) 1px, transparent 1px);
+    background-size: 100px 100px, 50px 50px, 50px 50px;
+}
+
+/* Batik Overlay for layered effects */
+.batik-overlay {
+    position: relative;
+}
+
+.batik-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 30px 30px, rgba(245, 158, 11, 0.08) 2px, transparent 2px),
+        radial-gradient(circle at 60px 60px, rgba(245, 158, 11, 0.05) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(245, 158, 11, 0.02) 25%, transparent 25%);
+    background-size: 60px 60px, 90px 90px, 30px 30px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.batik-overlay > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Specialized Batik Patterns for Navigation and Footer */
+.navbar-batik {
+    background-image:
+        radial-gradient(circle at 15px 15px, rgba(245, 158, 11, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 158, 11, 0.02) 50%, transparent 50%);
+    background-size: 30px 30px, 20px 20px;
+}
+
+.footer-batik {
+    background-image:
+        radial-gradient(circle at 25px 25px, rgba(245, 158, 11, 0.12) 2px, transparent 2px),
+        radial-gradient(circle at 50px 0px, rgba(245, 158, 11, 0.08) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(245, 158, 11, 0.03) 25%, transparent 25%);
+    background-size: 50px 50px, 100px 50px, 30px 30px;
+}
+
+/* Traditional Batik Motifs - More Complex Patterns */
+.batik-kawung {
+    background-image:
+        radial-gradient(circle at 25px 25px, rgba(245, 158, 11, 0.1) 8px, transparent 8px),
+        radial-gradient(circle at 75px 25px, rgba(245, 158, 11, 0.08) 6px, transparent 6px),
+        radial-gradient(circle at 25px 75px, rgba(245, 158, 11, 0.08) 6px, transparent 6px),
+        radial-gradient(circle at 75px 75px, rgba(245, 158, 11, 0.1) 8px, transparent 8px);
+    background-size: 100px 100px;
+}
+
+.batik-parang {
+    background-image:
+        repeating-linear-gradient(45deg,
+            rgba(245, 158, 11, 0.08) 0px,
+            rgba(245, 158, 11, 0.08) 8px,
+            transparent 8px,
+            transparent 16px
+        ),
+        repeating-linear-gradient(-45deg,
+            rgba(245, 158, 11, 0.05) 0px,
+            rgba(245, 158, 11, 0.05) 4px,
+            transparent 4px,
+            transparent 12px
+        );
+    background-size: 32px 32px, 24px 24px;
+}
+
+.batik-sido-mukti {
+    background-image:
+        radial-gradient(ellipse at 30px 20px, rgba(245, 158, 11, 0.12) 3px, transparent 3px),
+        radial-gradient(ellipse at 70px 20px, rgba(245, 158, 11, 0.08) 2px, transparent 2px),
+        radial-gradient(ellipse at 50px 50px, rgba(245, 158, 11, 0.1) 4px, transparent 4px),
+        radial-gradient(ellipse at 30px 80px, rgba(245, 158, 11, 0.08) 2px, transparent 2px),
+        radial-gradient(ellipse at 70px 80px, rgba(245, 158, 11, 0.12) 3px, transparent 3px);
+    background-size: 100px 100px;
+}
+
+/* Subtle Batik for light backgrounds */
+.batik-subtle {
+    background-image:
+        radial-gradient(circle at 20px 30px, rgba(245, 158, 11, 0.06) 2px, transparent 2px),
+        radial-gradient(circle at 40px 70px, rgba(245, 158, 11, 0.04) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(245, 158, 11, 0.01) 25%, transparent 25%);
+    background-size: 60px 60px, 80px 80px, 40px 40px;
+}
+
+/* Animation for dynamic batik effects */
+@keyframes batik-shift {
+    0% { background-position: 0px 0px, 0px 0px, 0px 0px; }
+    100% { background-position: 60px 60px, 80px 80px, 40px 40px; }
+}
+
+.batik-animated {
+    animation: batik-shift 20s linear infinite;
+}
+
+/* Dark theme batik patterns */
+.batik-dark-1 {
+    background-image:
+        radial-gradient(circle at 25px 25px, rgba(245, 158, 11, 0.15) 2px, transparent 2px),
+        radial-gradient(circle at 50px 0px, rgba(245, 158, 11, 0.12) 1px, transparent 1px),
+        linear-gradient(45deg, rgba(245, 158, 11, 0.05) 25%, transparent 25%);
+    background-size: 50px 50px, 100px 50px, 30px 30px;
+}
+
+/* Responsive batik patterns - smaller on mobile */
+@media (max-width: 768px) {
+    .batik-pattern-1,
+    .batik-pattern-2,
+    .batik-pattern-3,
+    .batik-pattern-4,
+    .batik-pattern-5 {
+        background-size: 30px 30px, 40px 40px, 20px 20px, 20px 20px;
+    }
+
+    .batik-kawung {
+        background-size: 50px 50px;
+    }
+
+    .batik-parang {
+        background-size: 16px 16px, 12px 12px;
+    }
+
+    .batik-sido-mukti {
+        background-size: 50px 50px;
+    }
+}
