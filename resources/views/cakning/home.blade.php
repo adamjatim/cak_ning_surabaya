@@ -149,7 +149,7 @@
     {{-- ABOUT SECTION --}}
     {{-- -------------------------------------- --}}
 
-    <div class="carousel w-full max-h-9/10 overflow-hidden">
+    {{-- <div class="carousel w-full max-h-9/10 overflow-hidden">
         <div id="cakning-carousel" class="relative w-full h-96 overflow-hidden">
 
             @php
@@ -213,7 +213,8 @@
                     class="btn btn-circle bg-olive-800/80 text-merino-500 hover:bg-pumpkin-500 transition">❯</button>
             </div>
         </div>
-    </div>
+    </div> --}}
+
     <section id="about" class="bg-pumpkin-500 py-16 batik-pattern-2">
         <div class="container max-w-screen-lg mx-auto px-6">
             <div class="text-center mb-8">
@@ -828,7 +829,7 @@
     </script>
 
     {{-- CAROUSEL --}}
-    <script>
+    {{-- <script>
         document.addEventListener('DOMContentLoaded', function() {
             const totalSlides = {{ count($carouselImages) }};
             let current = 1;
@@ -894,5 +895,5 @@
             showSlide(current);
             startAutoSlide();
         });
-    </script>
+    </script> --}}
 @endsection

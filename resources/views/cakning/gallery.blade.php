@@ -245,7 +245,7 @@
                     <div class="gallery-item bg-white rounded-xl shadow-md overflow-hidden cursor-pointer">
                         <div class="relative {{ $item['height'] }}">
                             <img src="{{ $item['image'] }}" alt="{{ $item['title'] }}" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-black opacity-0 hover:opacity-70 transition-all duration-300 flex items-center justify-center">
                                 <div class="opacity-0 hover:opacity-100 transition-opacity duration-300 text-center text-white p-4">
                                     <span class="iconify mb-2" data-icon="mdi:eye" data-width="32"></span>
                                     <h3 class="font-semibold mb-1">{{ $item['title'] }}</h3>

@@ -1,4 +1,4 @@
-<div class="drawer sticky top-0 z-100 bg-merino-50 navbar-batik">
+<div class="drawer sticky top-0 z-100 bg-merino-50">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
 
     <div class="drawer-content flex flex-col">
@@ -37,32 +37,38 @@
             <div class="hidden flex-none lg:block">
                 <ul class="menu menu-horizontal px-1">
                     <li>
-                        <a href="{{ url('/about') }}"
-                            class="text-lg font-bold @if (Request::is('about')) text-pumpkin-500 @else text-stone-800 @endif">
+                        <a href="{{ route('cakning.home') }}"
+                            class="text-lg font-bold @if (request()->routeIs('cakning.home')) text-pumpkin-500 @else text-stone-800 @endif">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('cakning.about') }}"
+                            class="text-lg font-bold @if (request()->routeIs('cakning.about')) text-pumpkin-500 @else text-stone-800 @endif">
                             About Us
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/event') }}"
-                            class="text-lg font-bold @if (Request::is('event')) text-pumpkin-500 @else text-stone-800 @endif">
+                        <a href="{{ route('cakning.event') }}"
+                            class="text-lg font-bold @if (request()->routeIs('cakning.event')) text-pumpkin-500 @else text-stone-800 @endif">
                             Event
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/blog') }}"
-                            class="text-lg font-bold @if (Request::is('blog')) text-pumpkin-500 @else text-stone-800 @endif">
+                        <a href="{{ route('cakning.blog') }}"
+                            class="text-lg font-bold @if (request()->routeIs('cakning.blog')) text-pumpkin-500 @else text-stone-800 @endif">
                             Blog
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/gallery') }}"
-                            class="text-lg font-bold @if (Request::is('gallery')) text-pumpkin-500 @else text-stone-800 @endif">
+                        <a href="{{ route('cakning.gallery') }}"
+                            class="text-lg font-bold @if (request()->routeIs('cakning.gallery')) text-pumpkin-500 @else text-stone-800 @endif">
                             Galeri
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url('/contact') }}"
-                            class="text-lg font-bold @if (Request::is('contact')) text-pumpkin-500 @else text-stone-800 @endif">
+                        <a href="{{ route('cakning.contact') }}"
+                            class="text-lg font-bold @if (request()->routeIs('cakning.contact')) text-pumpkin-500 @else text-stone-800 @endif">
                             Kontak
                         </a>
                     </li>

@@ -21,23 +21,6 @@
                 linear-gradient(45deg, rgba(245, 158, 11, 0.01) 25%, transparent 25%);
             background-size: 60px 60px, 80px 80px, 40px 40px;
         }
-
-        /* Navbar dengan aksen batik halus */
-        .navbar-batik {
-            background-image:
-                radial-gradient(circle at 15px 15px, rgba(245, 158, 11, 0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(245, 158, 11, 0.02) 50%, transparent 50%);
-            background-size: 30px 30px, 20px 20px;
-        }
-
-        /* Footer dengan pattern batik yang lebih visible */
-        .footer-batik {
-            background-image:
-                radial-gradient(circle at 25px 25px, rgba(245, 158, 11, 0.12) 2px, transparent 2px),
-                radial-gradient(circle at 50px 0px, rgba(245, 158, 11, 0.08) 1px, transparent 1px),
-                linear-gradient(45deg, rgba(245, 158, 11, 0.03) 25%, transparent 25%);
-            background-size: 50px 50px, 100px 50px, 30px 30px;
-        }
     </style>
     @yield('styles')
 </head>

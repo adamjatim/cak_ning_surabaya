@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GuestController;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/clear-cache', function() {
@@ -11,32 +12,24 @@ Route::get('/clear-cache', function() {
     return 'Cache cleared';
 });
 
-
-Route::middleware(['guest'])->group(function () {
-
-    Route::get('/', function() { return view('cakning.home');});
-    Route::get('/about', function() { return view('cakning.about');});
-    Route::get('/event', function() { return view('cakning.event');});
-    Route::get('/blog', function() { return view('cakning.blog');});
-    Route::get('/gallery', function() { return view('cakning.gallery');});
-    Route::get('/contact', function() { return view('cakning.contact');});
-
-    Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [AuthController::class, 'login'])->name('login.perform');
+Route::middleware(['guest'])->prefix('/')->name('cakning.')->group(function () {
+    Route::get('/', [GuestController::class, 'home'])->name('home');
+    Route::get('/about', [GuestController::class, 'about'])->name('about');
+    Route::get('/event', [GuestController::class, 'event'])->name('event');
+    Route::get('/blog', [GuestController::class, 'blog'])->name('blog');
+    Route::get('/gallery', [GuestController::class, 'gallery'])->name('gallery');
+    Route::get('/contact', [GuestController::class, 'contact'])->name('contact');
+    Route::post('/contact', [GuestController::class, 'submitContact'])->name('contact.submit');
 });
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login.perform');
 
 Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-// // Halaman login dan proses login
-// Route::middleware(['guest'])->group(function () {
-//     Route::get('/', function () {
-//         return redirect()->route('login');
-//     });
-//     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-//     Route::post('/login', [AuthController::class, 'login'])->name('login.perform');
-// });
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 // // // Group route yang memerlukan autentikasi
 // Route::middleware(['auth'])->group(function () {

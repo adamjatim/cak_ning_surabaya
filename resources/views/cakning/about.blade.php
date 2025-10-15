@@ -28,23 +28,7 @@
             background-size: 80px 80px, 40px 40px, 30px 30px;
         }
 
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-            border-left: 2px solid #d69e2e;
-            margin-bottom: 2rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 0;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #d69e2e;
-        }
+        
     </style>
 @endsection
 @section('content')
@@ -203,6 +187,230 @@
     {{-- -------------------------------------- --}}
     {{-- STRUKTUR ORGANISASI SECTION --}}
     {{-- -------------------------------------- --}}
+
+    @php
+        $executives = [
+            [
+                'id' => 1,
+                'next' => [2, 4, 7, 9],
+                'previous' => null,
+                'img' => asset('images/executives/ning_zerlin.jpg'),
+                'shortName' => 'Ning Zerlin',
+                'name' => 'Yazerlin Nadila Balqis, S.Bns.',
+                'tittle' => 'Ketua Umum',
+            ],
+            [
+                'id' => 2,
+                'next' => 3,
+                'previous' => 1,
+                'img' => asset('images/executives/ning_nia.jpg'),
+                'shortName' => 'Ning Nia',
+                'name' => 'Nakita Millenia Putri, S.H.',
+                'tittle' => 'Bendahara Umum',
+            ],
+            [
+                'id' => 3,
+                'next' => null,
+                'previous' => 2,
+                'img' => asset('images/executives/cak_bryan.jpg'),
+                'shortName' => 'Cak Bryan',
+                'name' => 'Bryan Benjamin Gondowardoyo',
+                'tittle' => 'Bendahara 1',
+            ],
+            [
+                'id' => 4,
+                'next' => [5, 6],
+                'previous' => 3,
+                'img' => asset('images/executives/cak_fide.jpg'),
+                'shortName' => 'Cak Fide',
+                'name' => 'Fide Abraham, S. Ikom',
+                'tittle' => 'Sekretaris Umum',
+            ],
+            [
+                'id' => 5,
+                'next' => null,
+                'previous' => 4,
+                'img' => asset('images/executives/ning_olda.jpg'),
+                'shortName' => 'Ning Olda',
+                'name' => 'Rizky Olda Putri Salsabila, S.Ars.',
+                'tittle' => 'Sekretaris 1',
+            ],
+            [
+                'id' => 6,
+                'next' => null,
+                'previous' => 5,
+                'img' => asset('images/executives/ning_sasa.jpg'),
+                'shortName' => 'Ning Sasa',
+                'name' => 'Sabrina Christellia',
+                'tittle' => 'Sekretaris 2',
+            ],
+            [
+                'id' => 7,
+                'next' => 8,
+                'previous' => 1,
+                'img' => asset('images/executives/cak_alvin.jpg'),
+                'shortName' => 'Cak Alvin',
+                'name' => 'Alvin Ananda Siregar, S.M.',
+                'tittle' => 'Ketua Bidang Internal',
+            ],
+            [
+                'id' => 8,
+                'next' => null,
+                'previous' => 7,
+                'img' => '',
+                'shortName' => 'Departemen',
+                'name' => '',
+                'tittle' => 'Diklat & Kesrat',
+            ],
+            [
+                'id' => 9,
+                'next' => 10,
+                'previous' => 1,
+                'img' => asset('images/executives/cak_rama.jpg'),
+                'shortName' => 'Cak Rama',
+                'name' => 'Hartawan Anugerah Ramadhan H',
+                'tittle' => 'Ketua Bidang External',
+            ],
+            [
+                'id' => 10,
+                'next' => null,
+                'previous' => 1,
+                'img' => '',
+                'shortName' => 'Departemen',
+                'name' => '',
+                'tittle' => 'Humas, Marcom & KWU',
+            ],
+        ];
+    @endphp
+
+    <div class="py-16 bg-white batik-pattern-about-2">
+        <div class="container max-w-screen-lg mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-olive-800 mb-2 text-center">Badan Pengurus Harian</h2>
+            <p class="text-lg text-olive-700 mb-8 text-center">Paguyuban Cak & Ning 2025-2028</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
+                @foreach ($executives as $ex)
+                    <div
+                        class="bg-merino-50 rounded-xl shadow-md p-6 flex flex-col items-center hover:shadow-lg transition">
+                        <div class="w-24 h-24 mb-4">
+                            @if ($ex['img'])
+                                <img src="{{ $ex['img'] }}" alt="{{ $ex['shortName'] }}"
+                                    class="rounded-full object-cover w-full h-full shadow">
+                            @else
+                                <div
+                                    class="w-full h-full flex items-center justify-center bg-olive-200 rounded-full text-olive-700 font-bold text-xl">
+                                    {{ $ex['shortName'] }}
+                                </div>
+                            @endif
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold text-olive-800">{{ $ex['shortName'] }}</h3>
+                            <p class="text-pumpkin-500 font-medium">{{ $ex['tittle'] }}</p>
+                            @if ($ex['name'])
+                                <p class="text-olive-700 text-sm mt-2">{{ $ex['name'] }}</p>
+                            @endif
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    {{-- -------------------------------------- --}}
+    {{-- STRUKTUR ORGANISASI SECTION --}}
+    {{-- -------------------------------------- --}}
+
+    @php
+        $organization = [
+            [
+                'name' => 'Ning Zerlin',
+                'title' => 'Ketua Umum',
+                'image' => asset('images/executives/ning_zerlin.jpg'),
+                'children' => [
+                    [
+                        'name' => 'Ning Nia',
+                        'title' => 'Bendahara Umum',
+                        'image' => asset('images/executives/ning_nia.jpg'),
+                        'children' => [
+                            [
+                                'name' => 'Cak Bryan',
+                                'title' => 'Bendahara 1',
+                                'image' => asset('images/executives/cak_bryan.jpg'),
+                            ],
+                        ],
+                    ],
+                    [
+                        'name' => 'Cak Fide',
+                        'title' => 'Sekretaris Umum',
+                        'image' => asset('images/executives/cak_fide.jpg'),
+                        'children' => [
+                            [
+                                'name' => 'Ning Olda',
+                                'title' => 'Sekretaris 1',
+                                'image' => asset('images/executives/ning_olda.jpg'),
+                            ],
+                            [
+                                'name' => 'Ning Sasa',
+                                'title' => 'Sekretaris 2',
+                                'image' => asset('images/executives/ning_sasa.jpg'),
+                            ],
+                        ],
+                    ],
+                    [
+                        'name' => 'Cak Alvin',
+                        'title' => 'Ketua Bidang Internal',
+                        'image' => asset('images/executives/cak_alvin.jpg'),
+                        'children' => [
+                            [
+                                'name' => 'Departemen',
+                                'title' => 'Diklat & Kesrat',
+                                'image' => '',
+                            ],
+                        ],
+                    ],
+                    [
+                        'name' => 'Cak Rama',
+                        'title' => 'Ketua Bidang External',
+                        'image' => asset('images/executives/cak_rama.jpg'),
+                        'children' => [
+                            [
+                                'name' => 'Departemen',
+                                'title' => 'Humas, Marcom & KWU',
+                                'image' => '',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+    @endphp
+
+    <div class="py-16 bg-white batik-pattern-about-2">
+        <div class="container max-w-screen-lg mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-olive-800 mb-2 text-center">Badan Pengurus Harian</h2>
+            <p class="text-lg text-olive-700 mb-8 text-center">Paguyuban Cak & Ning 2025-2028</p>
+            <div class="flex flex-col items-center">
+                <div class="flex flex-col w-fit">Ketua Umum</div>
+
+                <div class="flex flex-row">
+                    <div class="flex flex-col">
+                        <div class="flex">Bendahara Umum</div>
+                        <div class="flex">Bendahara 1</div>
+                    </div>
+
+                    
+
+                    <div class="flex flex-col">
+                        <div class="flex">Sekretaris Umum</div>
+                        <div class="flex flex-col md:flex-row">
+                            <div class="flex">Sekretaris 1</div>
+                            <div class="flex">Sekretaris 2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="bg-merino-50 py-16 batik-pattern-about-3">
         <div class="container max-w-screen-lg mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-olive-800 mb-4">Struktur Organisasi</h2>
@@ -331,154 +539,337 @@
 @section('scripts')
 
 @endsection
-
-1. Cak Maudah
-TB : 169 cm
-BB : 72 kg
-ig : https://www.instagram.com/maudahrw/
-
-2. Cak Juan
-TB : 179 cm
-BB : 113 kg
-ig : https://www.instagram.com/juanssss_
-
-3. Cak Abel
-TB : 171 cm
-BB : 69 kg
-ig : https://www.instagram.com/abelpratamaaaa_/
-
-4. Cak Hendy
-TB : 176 cm
-BB : 79 kg
-ig :
-
-5. Cak Raynal
-TB : 173 cm
-BB : 66 kg
-ig :
-
-6. Cak Rangga
-TB : 178 cm
-BB : 115 kg
-ig :
-
-7. Cak Adi
-TB : 170 cm
-BB : 45 kg
-ig :
-
-8. Cak Hanif
-TB : 186 cm
-BB : 73,2 kg
-ig :
-
-9. Cak Bagas
-TB : 184 cm
-BB : 82,5 kg
-ig :
-
-10. Cak Arka
-TB : 176 cm
-BB : 70,4 kg
-ig :
-
-11. Cak Zidane
-TB : 170 cm
-BB : 74 kg
-ig :
-
-12. Cak Rofiq
-TB : 169 cm
-BB : 70 kg
-ig :
-
-13. Cak Hilmi
-TB : 169 cm
-BB : 66 kg
-ig :
-
-14. Cak Helmy
-TB : 168 cm
-BB : 65,5 kg
-ig :
-
-15. Cak William
-TB : 168 cm
-BB : 57 kg
-ig :
-
-16. Ning Joana
-TB : 164 cm
-BB : 53 kg
-ig :
-
-17. Ning Deninta
-TB : 168 cm
-BB : 59 kg
-ig :
-
-18. Ning Sasa
-TB : 159 cm
-BB : 40,6 kg
-ig :
-
-19. Ning Michelle
-TB : 170 cm
-BB : 53,2 kg
-ig :
-
-20. Ning Ajeng
-TB : 158 cm
-BB : 51,6 kg
-ig :
-
-21. Ning Elvira
-TB : 168 cm
-BB : 60 kg
-ig :
-
-22. Ning Tiara
-TB : 157 cm
-BB : 46 kg
-ig :
-
-23. Ning Chellyne
-TB : 171 cm
-BB : 67 kg
-ig :
-
-24. Ning Jhea
-TB : 167 cm
-BB : 61 kg
-ig :
-
-25. Ning Indira
-TB : 166 cm
-BB : 47 kg
-ig :
-
-26. Ning Sayla
-TB : 167 cm
-BB : 46 kg
-ig :
-
-27. Ning Roscetta
-TB : 162 cm
-BB : 45 kg
-ig :
-
-28. Ning Khaila
-TB : 158,5 cm
-BB : 54,3 kg
-ig :
-
-29. Ning Farah
-TB : 158 cm
-BB : 53,8 kg
-ig :
-
-30. Ning Tsania
-TB : 158 cm
-BB : 40 kg
-ig :
-
+@php
+    $talents = [
+        [
+            'name' => 'Cak Maudah',
+            'tb' => '169 cm',
+            'bb' => '72 kg',
+            'ig' => 'https://www.instagram.com/maudahrw/',
+            'images' => [
+                asset('images/talents/cak_maudah_1.jpg'),
+                asset('images/talents/cak_maudah_2.jpg'),
+                asset('images/talents/cak_maudah_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Juan',
+            'tb' => '179 cm',
+            'bb' => '113 kg',
+            'ig' => 'https://www.instagram.com/juanssss_/',
+            'images' => [
+                asset('images/talents/cak_juan_1.jpg'),
+                asset('images/talents/cak_juan_2.jpg'),
+                asset('images/talents/cak_juan_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Abel',
+            'tb' => '171 cm',
+            'bb' => '69 kg',
+            'ig' => 'https://www.instagram.com/abelpratamaaaa_/',
+            'images' => [
+                asset('images/talents/cak_abel_1.jpg'),
+                asset('images/talents/cak_abel_2.jpg'),
+                asset('images/talents/cak_abel_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Hendy',
+            'tb' => '176 cm',
+            'bb' => '79 kg',
+            'ig' => 'https://www.instagram.com/hendytk_/',
+            'images' => [
+                asset('images/talents/cak_hendy_1.jpg'),
+                asset('images/talents/cak_hendy_2.jpg'),
+                asset('images/talents/cak_hendy_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Raynal',
+            'tb' => '173 cm',
+            'bb' => '66 kg',
+            'ig' => 'https://www.instagram.com/muhammad_xaviero/',
+            'images' => [
+                asset('images/talents/cak_raynal_1.jpg'),
+                asset('images/talents/cak_raynal_2.jpg'),
+                asset('images/talents/cak_raynal_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Rangga',
+            'tb' => '178 cm',
+            'bb' => '115 kg',
+            'ig' => 'https://www.instagram.com/axlrd_/',
+            'images' => [
+                asset('images/talents/cak_rangga_1.jpg'),
+                asset('images/talents/cak_rangga_2.jpg'),
+                asset('images/talents/cak_rangga_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Adi',
+            'tb' => '170 cm',
+            'bb' => '45 kg',
+            'ig' => 'https://www.instagram.com/adiferryx/',
+            'images' => [
+                asset('images/talents/cak_adi_1.jpg'),
+                asset('images/talents/cak_adi_2.jpg'),
+                asset('images/talents/cak_adi_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Hanif',
+            'tb' => '186 cm',
+            'bb' => '73,2 kg',
+            'ig' => 'https://www.instagram.com/hanif13_/',
+            'images' => [
+                asset('images/talents/cak_hanif_1.jpg'),
+                asset('images/talents/cak_hanif_2.jpg'),
+                asset('images/talents/cak_hanif_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Bagas',
+            'tb' => '184 cm',
+            'bb' => '82,5 kg',
+            'ig' => 'https://www.instagram.com/bagasstl/',
+            'images' => [
+                asset('images/talents/cak_bagas_1.jpg'),
+                asset('images/talents/cak_bagas_2.jpg'),
+                asset('images/talents/cak_bagas_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Arka',
+            'tb' => '176 cm',
+            'bb' => '70,4 kg',
+            'ig' => 'https://www.instagram.com/arkadewaa_/',
+            'images' => [
+                asset('images/talents/cak_arka_1.jpg'),
+                asset('images/talents/cak_arka_2.jpg'),
+                asset('images/talents/cak_arka_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Zidane',
+            'tb' => '170 cm',
+            'bb' => '74 kg',
+            'ig' => 'https://www.instagram.com/zidannnr_/',
+            'images' => [
+                asset('images/talents/cak_zidane_1.jpg'),
+                asset('images/talents/cak_zidane_2.jpg'),
+                asset('images/talents/cak_zidane_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Rofiq',
+            'tb' => '169 cm',
+            'bb' => '70 kg',
+            'ig' => 'https://www.instagram.com/achmadrofiiq/',
+            'images' => [
+                asset('images/talents/cak_rofiq_1.jpg'),
+                asset('images/talents/cak_rofiq_2.jpg'),
+                asset('images/talents/cak_rofiq_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Hilmi',
+            'tb' => '169 cm',
+            'bb' => '66 kg',
+            'ig' => 'https://www.instagram.com/ryvaldihilmi_/',
+            'images' => [
+                asset('images/talents/cak_hilmi_1.jpg'),
+                asset('images/talents/cak_hilmi_2.jpg'),
+                asset('images/talents/cak_hilmi_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak Helmy',
+            'tb' => '168 cm',
+            'bb' => '65,5 kg',
+            'ig' => 'https://www.instagram.com/helmy_fe/',
+            'images' => [
+                asset('images/talents/cak_helmy_1.jpg'),
+                asset('images/talents/cak_helmy_2.jpg'),
+                asset('images/talents/cak_helmy_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Cak William',
+            'tb' => '168 cm',
+            'bb' => '57 kg',
+            'ig' => 'https://www.instagram.com/grtwilli_/',
+            'images' => [
+                asset('images/talents/cak_william_1.jpg'),
+                asset('images/talents/cak_william_2.jpg'),
+                asset('images/talents/cak_william_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Joana',
+            'tb' => '164 cm',
+            'bb' => '53 kg',
+            'ig' => 'https://www.instagram.com/joanaa_sohilait/',
+            'images' => [
+                asset('images/talents/ning_joana_1.jpg'),
+                asset('images/talents/ning_joana_2.jpg'),
+                asset('images/talents/ning_joana_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Deninta',
+            'tb' => '168 cm',
+            'bb' => '59 kg',
+            'ig' => 'https://www.instagram.com/denintavasthy/',
+            'images' => [
+                asset('images/talents/ning_deninta_1.jpg'),
+                asset('images/talents/ning_deninta_2.jpg'),
+                asset('images/talents/ning_deninta_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Sasa',
+            'tb' => '159 cm',
+            'bb' => '40,6 kg',
+            'ig' => 'https://www.instagram.com/sabrinachristellia/',
+            'images' => [
+                asset('images/talents/ning_sasa_1.jpg'),
+                asset('images/talents/ning_sasa_2.jpg'),
+                asset('images/talents/ning_sasa_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Michelle',
+            'tb' => '170 cm',
+            'bb' => '53,2 kg',
+            'ig' => 'https://www.instagram.com/mischgav/',
+            'images' => [
+                asset('images/talents/ning_michelle_1.jpg'),
+                asset('images/talents/ning_michelle_2.jpg'),
+                asset('images/talents/ning_michelle_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Ajeng',
+            'tb' => '158 cm',
+            'bb' => '51,6 kg',
+            'ig' => 'https://www.instagram.com/deajeng.ramadin/',
+            'images' => [
+                asset('images/talents/ning_ajeng_1.jpg'),
+                asset('images/talents/ning_ajeng_2.jpg'),
+                asset('images/talents/ning_ajeng_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Elvira',
+            'tb' => '168 cm',
+            'bb' => '60 kg',
+            'ig' => 'https://www.instagram.com/elvira.da/',
+            'images' => [
+                asset('images/talents/ning_elvira_1.jpg'),
+                asset('images/talents/ning_elvira_2.jpg'),
+                asset('images/talents/ning_elvira_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Tiara',
+            'tb' => '157 cm',
+            'bb' => '46 kg',
+            'ig' => 'https://www.instagram.com/amandatiara_/',
+            'images' => [
+                asset('images/talents/ning_tiara_1.jpg'),
+                asset('images/talents/ning_tiara_2.jpg'),
+                asset('images/talents/ning_tiara_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Chellyne',
+            'tb' => '171 cm',
+            'bb' => '67 kg',
+            'ig' => 'https://www.instagram.com/chellynesalsabila/',
+            'images' => [
+                asset('images/talents/ning_chellyne_1.jpg'),
+                asset('images/talents/ning_chellyne_2.jpg'),
+                asset('images/talents/ning_chellyne_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Jhea',
+            'tb' => '167 cm',
+            'bb' => '61 kg',
+            'ig' => 'https://www.instagram.com/jaquestera/',
+            'images' => [
+                asset('images/talents/ning_jhea_1.jpg'),
+                asset('images/talents/ning_jhea_2.jpg'),
+                asset('images/talents/ning_jhea_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Indira',
+            'tb' => '166 cm',
+            'bb' => '47 kg',
+            'ig' => 'https://www.instagram.com/indiraaparamita/',
+            'images' => [
+                asset('images/talents/ning_indira_1.jpg'),
+                asset('images/talents/ning_indira_2.jpg'),
+                asset('images/talents/ning_indira_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Sayla',
+            'tb' => '167 cm',
+            'bb' => '46 kg',
+            'ig' => 'https://www.instagram.com/saylakartika/',
+            'images' => [
+                asset('images/talents/ning_sayla_1.jpg'),
+                asset('images/talents/ning_sayla_2.jpg'),
+                asset('images/talents/ning_sayla_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Roscetta',
+            'tb' => '162 cm',
+            'bb' => '45 kg',
+            'ig' => 'https://www.instagram.com/rosceyi/',
+            'images' => [
+                asset('images/talents/ning_roscetta_1.jpg'),
+                asset('images/talents/ning_roscetta_2.jpg'),
+                asset('images/talents/ning_roscetta_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Khaila',
+            'tb' => '158,5 cm',
+            'bb' => '54,3 kg',
+            'ig' => 'https://www.instagram.com/khailaar/',
+            'images' => [
+                asset('images/talents/ning_khaila_1.jpg'),
+                asset('images/talents/ning_khaila_2.jpg'),
+                asset('images/talents/ning_khaila_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Farah',
+            'tb' => '158 cm',
+            'bb' => '53,8 kg',
+            'ig' => 'https://www.instagram.com/farahfaridaaa/',
+            'images' => [
+                asset('images/talents/ning_farah_1.jpg'),
+                asset('images/talents/ning_farah_2.jpg'),
+                asset('images/talents/ning_farah_3.jpg'),
+            ],
+        ],
+        [
+            'name' => 'Ning Tsania',
+            'tb' => '158 cm',
+            'bb' => '40 kg',
+            'ig' => 'https://www.instagram.com/shafyratm/',
+            'images' => [
+                asset('images/talents/ning_tsania_1.jpg'),
+                asset('images/talents/ning_tsania_2.jpg'),
+                asset('images/talents/ning_tsania_3.jpg'),
+            ],
+        ],
+    ];
+@endphp
