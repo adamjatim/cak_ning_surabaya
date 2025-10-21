@@ -8,7 +8,7 @@
     <!-- Statistics Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <!-- Total Anggota -->
-        <div class="bg-white rounded-xl shadow-sm border border-olive-200 p-6 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl shadow-sm border border-olive-200 p-6 hover:shadow-md transition-shadow dashboard-card">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-olive-600 text-sm font-medium">Total Anggota</p>
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Event Aktif -->
-        <div class="bg-white rounded-xl shadow-sm border border-olive-200 p-6 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl shadow-sm border border-olive-200 p-6 hover:shadow-md transition-shadow dashboard-card">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-olive-600 text-sm font-medium">Event Aktif</p>
@@ -40,7 +40,7 @@
         </div>
 
         <!-- Postingan Blog -->
-        <div class="bg-white rounded-xl shadow-sm border border-olive-200 p-6 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl shadow-sm border border-olive-200 p-6 hover:shadow-md transition-shadow dashboard-card">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-olive-600 text-sm font-medium">Postingan Blog</p>
@@ -56,7 +56,7 @@
         </div>
 
         <!-- Penugasan Aktif -->
-        <div class="bg-white rounded-xl shadow-sm border border-olive-200 p-6 hover:shadow-md transition-shadow">
+        <div class="bg-white rounded-xl shadow-sm border border-olive-200 p-6 hover:shadow-md transition-shadow dashboard-card">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-olive-600 text-sm font-medium">Penugasan Aktif</p>
@@ -82,32 +82,32 @@
                     Quick Actions
                 </h3>
                 <div class="space-y-3">
-                    <a {{-- href="{{ route('admin.posts.create') }}" --}}
-                       class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
+                    <a href="{{ route('admin.blog.create') }}"
+                       class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors quick-action-btn">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-blue-600" data-icon="mdi:plus-circle" data-width="20"></span>
                             <span class="font-medium text-olive-800">Buat Post Baru</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.events.create') }}" --}}
-                       class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
+                    <a href="{{ route('admin.events.create') }}"
+                       class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors quick-action-btn">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-pumpkin-600" data-icon="mdi:calendar-plus" data-width="20"></span>
                             <span class="font-medium text-olive-800">Tambah Event</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.assignments.create') }}" --}}
-                       class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
+                    <a href="{{ route('admin.assignments.create') }}"
+                       class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors quick-action-btn">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-yellow-600" data-icon="mdi:assignment-plus" data-width="20"></span>
                             <span class="font-medium text-olive-800">Buat Penugasan</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.users.create') }}" --}}
-                       class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
+                    <a href="{{ route('admin.talents.create') }}"
+                       class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors quick-action-btn">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-green-600" data-icon="mdi:account-plus" data-width="20"></span>
-                            <span class="font-medium text-olive-800">Tambah User</span>
+                            <span class="font-medium text-olive-800">Tambah Talent</span>
                         </div>
                     </a>
                 </div>
@@ -168,7 +168,7 @@
                 </div>
 
                 <div class="mt-4 pt-4 border-t border-olive-200">
-                    <a {{-- href="{{ route('admin.activities.index') }}" --}}
+                    <a href="#"
                        class="text-sm text-olive-600 hover:text-olive-800 font-medium flex items-center">
                         Lihat semua aktivitas
                         <span class="iconify ml-1" data-icon="mdi:arrow-right" data-width="16"></span>

@@ -74,28 +74,28 @@
                     Quick Actions
                 </h3>
                 <div class="space-y-3">
-                    <a {{-- href="{{ route('admin.talents.create') }}" --}}
+                    <a href="{{ route('admin.talents.create') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-purple-600" data-icon="mdi:account-plus" data-width="20"></span>
                             <span class="font-medium text-olive-800">Tambah Talent Baru</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.talents.portfolio') }}" --}}
+                    <a href="{{ route('admin.talents.portfolio') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-blue-600" data-icon="mdi:image-multiple" data-width="20"></span>
                             <span class="font-medium text-olive-800">Kelola Portfolio</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.talents.ratings') }}" --}}
+                    <a href="{{ route('admin.talents.ratings') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-yellow-600" data-icon="mdi:star" data-width="20"></span>
                             <span class="font-medium text-olive-800">Review & Rating</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.talents.schedule') }}" --}}
+                    <a href="{{ route('admin.talents.schedule') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-green-600" data-icon="mdi:calendar-account" data-width="20"></span>
@@ -140,7 +140,7 @@
                         <span class="iconify mr-2" data-icon="mdi:trophy" data-width="20"></span>
                         Top Performers
                     </h3>
-                    <a {{-- href="{{ route('admin.talents.index') }}" --}}
+                    <a href="{{ route('admin.talents.index') }}"
                        class="text-sm text-olive-600 hover:text-olive-800 font-medium flex items-center">
                         Lihat semua
                         <span class="iconify ml-1" data-icon="mdi:arrow-right" data-width="16"></span>

@@ -76,28 +76,28 @@
                     Quick Actions
                 </h3>
                 <div class="space-y-3">
-                    <a {{-- href="{{ route('admin.assignments.create') }}" --}}
+                    <a href="{{ route('admin.assignments.create') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-blue-600" data-icon="mdi:clipboard-plus" data-width="20"></span>
                             <span class="font-medium text-olive-800">Tambah Penugasan</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.assignments.schedule') }}" --}}
+                    <a href="{{ route('admin.assignments.schedule') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-green-600" data-icon="mdi:calendar-clock" data-width="20"></span>
                             <span class="font-medium text-olive-800">Jadwal Penugasan</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.assignments.reports') }}" --}}
+                    <a href="{{ route('admin.assignments.reports') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-purple-600" data-icon="mdi:chart-box" data-width="20"></span>
                             <span class="font-medium text-olive-800">Laporan Penugasan</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.assignments.budgets') }}" --}}
+                    <a href="{{ route('admin.assignments.budgets') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-yellow-600" data-icon="mdi:account-cash" data-width="20"></span>
@@ -154,7 +154,7 @@
                         <span class="iconify mr-2" data-icon="mdi:clock-time-four" data-width="20"></span>
                         Recent Assignments
                     </h3>
-                    <a {{-- href="{{ route('admin.assignments.index') }}" --}}
+                    <a href="{{ route('admin.assignments.index') }}"
                        class="text-sm text-olive-600 hover:text-olive-800 font-medium flex items-center">
                         Lihat semua
                         <span class="iconify ml-1" data-icon="mdi:arrow-right" data-width="16"></span>

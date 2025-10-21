@@ -76,28 +76,28 @@
                     Quick Actions
                 </h3>
                 <div class="space-y-3">
-                    <a {{-- href="{{ route('admin.posts.create') }}" --}}
+                    <a href="{{ route('admin.blog.create') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-blue-600" data-icon="mdi:plus-circle" data-width="20"></span>
                             <span class="font-medium text-olive-800">Buat Post Baru</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.posts.index') }}?status=draft" --}}
+                    <a href="{{ route('admin.blog.index') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-yellow-600" data-icon="mdi:file-document-edit" data-width="20"></span>
                             <span class="font-medium text-olive-800">Kelola Draft</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.categories.index') }}" --}}
+                    <a href="#"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-purple-600" data-icon="mdi:tag-multiple" data-width="20"></span>
                             <span class="font-medium text-olive-800">Kelola Kategori</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.comments.index') }}" --}}
+                    <a href="#"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-green-600" data-icon="mdi:comment-multiple" data-width="20"></span>
@@ -131,7 +131,7 @@
                         <span class="iconify mr-2" data-icon="mdi:post" data-width="20"></span>
                         Recent Posts
                     </h3>
-                    <a {{-- href="{{ route('admin.posts.index') }}" --}}
+                    <a href="{{ route('admin.blog.index') }}"
                        class="text-sm text-olive-600 hover:text-olive-800 font-medium flex items-center">
                         Lihat semua
                         <span class="iconify ml-1" data-icon="mdi:arrow-right" data-width="16"></span>

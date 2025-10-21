@@ -76,28 +76,28 @@
                     Quick Actions
                 </h3>
                 <div class="space-y-3">
-                    <a {{-- href="{{ route('admin.payroll.create') }}" --}}
+                    <a href="{{ route('admin.payroll.create') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-green-600" data-icon="mdi:cash-plus" data-width="20"></span>
                             <span class="font-medium text-olive-800">Proses Gaji Baru</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.payroll.bulk-process') }}" --}}
+                    <a href="{{ route('admin.payroll.bulk-process') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-blue-600" data-icon="mdi:cash-check" data-width="20"></span>
                             <span class="font-medium text-olive-800">Proses Bulk Payment</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.payroll.reports') }}" --}}
+                    <a href="{{ route('admin.payroll.reports') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-purple-600" data-icon="mdi:file-chart" data-width="20"></span>
                             <span class="font-medium text-olive-800">Laporan Gaji</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.payroll.tax-management') }}" --}}
+                    <a href="{{ route('admin.payroll.tax-management') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-red-600" data-icon="mdi:percent" data-width="20"></span>
@@ -147,7 +147,7 @@
                         <span class="iconify mr-2" data-icon="mdi:clock-time-four" data-width="20"></span>
                         Recent Payments
                     </h3>
-                    <a {{-- href="{{ route('admin.payroll.index') }}" --}}
+                    <a href="{{ route('admin.payroll.index') }}"
                        class="text-sm text-olive-600 hover:text-olive-800 font-medium flex items-center">
                         Lihat semua
                         <span class="iconify ml-1" data-icon="mdi:arrow-right" data-width="16"></span>

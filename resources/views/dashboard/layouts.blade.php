@@ -14,8 +14,8 @@
 
         <!-- Page content wrapper -->
         <div class="drawer-content flex flex-col">
-            <!-- Top Navbar -->
-            <div class="navbar bg-white shadow-sm border-b border-olive-200 px-4 lg:px-6">
+            <!-- Top Navbar - Made Sticky -->
+            <div class="navbar bg-white shadow-sm border-b border-olive-200 px-4 lg:px-6 sticky top-0 z-50 dashboard-navbar">
                 <!-- Mobile menu button -->
                 <div class="flex-none lg:hidden">
                     <label for="dashboard-drawer" class="btn btn-square btn-ghost text-olive-700">
@@ -36,27 +36,27 @@
                                 <li class="menu-title text-olive-600 font-medium">
                                     <span>Dashboard Management</span>
                                 </li>
-                                <li><a {{-- href="{{ route('admin.dashboard') }}" --}} class="text-olive-700 hover:bg-olive-50">
+                                <li><a href="{{ route('dashboard') }}" class="text-olive-700 hover:bg-olive-50">
                                     <span class="iconify" data-icon="mdi:view-dashboard" data-width="18"></span>
                                     Dashboard Utama
                                 </a></li>
-                                <li><a {{-- href="{{ route('admin.blog.dashboard') }}" --}} class="text-olive-700 hover:bg-olive-50">
+                                <li><a href="{{ route('admin.blog.index') }}" class="text-olive-700 hover:bg-olive-50">
                                     <span class="iconify" data-icon="mdi:post" data-width="18"></span>
                                     Dashboard Blog
                                 </a></li>
-                                <li><a {{-- href="{{ route('admin.events.dashboard') }}" --}} class="text-olive-700 hover:bg-olive-50">
+                                <li><a href="{{ route('admin.events.index') }}" class="text-olive-700 hover:bg-olive-50">
                                     <span class="iconify" data-icon="mdi:calendar-star" data-width="18"></span>
                                     Dashboard Event
                                 </a></li>
-                                <li><a {{-- href="{{ route('admin.talents.dashboard') }}" --}} class="text-olive-700 hover:bg-olive-50">
+                                <li><a href="{{ route('admin.talents.index') }}" class="text-olive-700 hover:bg-olive-50">
                                     <span class="iconify" data-icon="mdi:account-star" data-width="18"></span>
                                     Dashboard Talent
                                 </a></li>
-                                <li><a {{-- href="{{ route('admin.assignments.dashboard') }}" --}} class="text-olive-700 hover:bg-olive-50">
+                                <li><a href="{{ route('admin.assignments.index') }}" class="text-olive-700 hover:bg-olive-50">
                                     <span class="iconify" data-icon="mdi:assignment" data-width="18"></span>
                                     Dashboard Penugasan
                                 </a></li>
-                                <li><a {{-- href="{{ route('admin.payroll.dashboard') }}" --}} class="text-olive-700 hover:bg-olive-50">
+                                <li><a href="{{ route('admin.payroll.index') }}" class="text-olive-700 hover:bg-olive-50">
                                     <span class="iconify" data-icon="mdi:cash-multiple" data-width="18"></span>
                                     Dashboard Penggajian
                                 </a></li>
@@ -77,17 +77,17 @@
                         <label tabindex="0" class="btn btn-ghost btn-circle avatar placeholder">
                             <div class="bg-olive-200 text-olive-800 rounded-full w-10">
                                 <span class="text-lg font-medium">
-                                    {{-- {{ substr(Auth::user()->name, 0, 1) }} --}}A
+                                    {{ substr(Auth::user()->name, 0, 1) }}
                                 </span>
                             </div>
                         </label>
                         <ul tabindex="0" class="dropdown-content menu p-2 shadow-lg bg-white rounded-box w-52 border border-olive-200 mt-2">
                             <li class="menu-title">
                                 <span class="text-olive-800 font-medium">
-                                    {{-- {{ Auth::user()->name }} --}}Admin User
+                                    {{ Auth::user()->name }}
                                 </span>
                                 <span class="text-xs text-olive-600 -mt-1">
-                                    {{-- {{ Auth::user()->role->name }} --}}Administrator
+                                    {{ ucfirst(Auth::user()->role->name ?? 'Administrator') }}
                                 </span>
                             </li>
                             <div class="divider my-1"></div>
@@ -115,7 +115,7 @@
             </div>
 
             <!-- Main Content -->
-            <main class="flex-1 p-4 lg:p-6">
+            <main class="flex-1 p-4 lg:p-6 dashboard-main-content">
                 @yield('content')
             </main>
         </div>
@@ -123,7 +123,7 @@
         <!-- Sidebar -->
         <div class="drawer-side">
             <label for="dashboard-drawer" class="drawer-overlay"></label>
-            <aside class="min-h-full w-64 bg-white border-r border-olive-200 flex flex-col" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.02) 0%, rgba(245, 158, 11, 0.05) 100%), var(--batik-kawung-pattern, none);">
+            <aside class="min-h-full w-64 bg-white border-r border-olive-200 flex flex-col dashboard-sidebar" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.02) 0%, rgba(245, 158, 11, 0.05) 100%), var(--batik-kawung-pattern, none);">
                 <!-- Sidebar Header -->
                 <div class="p-4 border-b border-olive-200 bg-olive-50">
                     <div class="flex items-center space-x-3">
@@ -160,12 +160,12 @@
                             <span class="iconify mr-3" data-icon="mdi:calendar-star" data-width="20"></span>
                             Events
                         </a>
-                        <a {{-- href="{{ route('admin.galleries.index') }}" --}}
+                        <a href="#"
                            class="flex items-center px-3 py-2 rounded-lg hover:bg-olive-100 text-olive-700 transition-colors">
                             <span class="iconify mr-3" data-icon="mdi:image-multiple" data-width="20"></span>
                             Gallery
                         </a>
-                        <a {{-- href="{{ route('admin.faqs.index') }}" --}}
+                        <a href="#"
                            class="flex items-center px-3 py-2 rounded-lg hover:bg-olive-100 text-olive-700 transition-colors">
                             <span class="iconify mr-3" data-icon="mdi:help-circle" data-width="20"></span>
                             FAQs
@@ -175,7 +175,7 @@
                     <!-- User Management -->
                     <div class="mb-4">
                         <h3 class="text-xs font-semibold text-olive-600 uppercase tracking-wide mb-2 px-2">User Management</h3>
-                        <a {{-- href="{{ route('admin.users.index') }}" --}}
+                        <a href="#"
                            class="flex items-center px-3 py-2 rounded-lg hover:bg-olive-100 text-olive-700 transition-colors">
                             <span class="iconify mr-3" data-icon="mdi:account-group" data-width="20"></span>
                             Users
@@ -185,7 +185,7 @@
                             <span class="iconify mr-3" data-icon="mdi:account-star" data-width="20"></span>
                             Talents
                         </a>
-                        <a {{-- href="{{ route('admin.roles.index') }}" --}}
+                        <a href="#"
                            class="flex items-center px-3 py-2 rounded-lg hover:bg-olive-100 text-olive-700 transition-colors">
                             <span class="iconify mr-3" data-icon="mdi:shield-account" data-width="20"></span>
                             Roles & Permissions
@@ -205,7 +205,7 @@
                             <span class="iconify mr-3" data-icon="mdi:cash-multiple" data-width="20"></span>
                             Payroll
                         </a>
-                        <a {{-- href="{{ route('admin.reports.index') }}" --}}
+                        <a href="#"
                            class="flex items-center px-3 py-2 rounded-lg hover:bg-olive-100 text-olive-700 transition-colors">
                             <span class="iconify mr-3" data-icon="mdi:chart-bar" data-width="20"></span>
                             Reports
@@ -215,12 +215,12 @@
                     <!-- System -->
                     <div class="mb-4">
                         <h3 class="text-xs font-semibold text-olive-600 uppercase tracking-wide mb-2 px-2">System</h3>
-                        <a {{-- href="{{ route('admin.chatlogs.index') }}" --}}
+                        <a href="#"
                            class="flex items-center px-3 py-2 rounded-lg hover:bg-olive-100 text-olive-700 transition-colors">
                             <span class="iconify mr-3" data-icon="mdi:message-text" data-width="20"></span>
                             Chat Logs
                         </a>
-                        <a {{-- href="{{ route('admin.settings.index') }}" --}}
+                        <a href="#"
                            class="flex items-center px-3 py-2 rounded-lg hover:bg-olive-100 text-olive-700 transition-colors">
                             <span class="iconify mr-3" data-icon="mdi:cog" data-width="20"></span>
                             Settings

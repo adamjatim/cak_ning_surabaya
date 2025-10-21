@@ -74,28 +74,28 @@
                     Quick Actions
                 </h3>
                 <div class="space-y-3">
-                    <a {{-- href="{{ route('admin.events.create') }}" --}}
+                    <a href="{{ route('admin.events.create') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-pumpkin-600" data-icon="mdi:calendar-plus" data-width="20"></span>
                             <span class="font-medium text-olive-800">Buat Event Baru</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.events.index') }}?status=draft" --}}
+                    <a href="{{ route('admin.events.index') }}"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-yellow-600" data-icon="mdi:calendar-edit" data-width="20"></span>
                             <span class="font-medium text-olive-800">Kelola Draft Event</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.venues.index') }}" --}}
+                    <a href="#"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-blue-600" data-icon="mdi:map-marker" data-width="20"></span>
                             <span class="font-medium text-olive-800">Kelola Venue</span>
                         </div>
                     </a>
-                    <a {{-- href="{{ route('admin.bookings.index') }}" --}}
+                    <a href="#"
                        class="block w-full p-3 text-left rounded-lg border border-olive-200 hover:bg-olive-50 transition-colors">
                         <div class="flex items-center">
                             <span class="iconify mr-3 text-green-600" data-icon="mdi:calendar-account" data-width="20"></span>
