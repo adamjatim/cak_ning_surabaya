@@ -59,3 +59,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+sudo chown -R www-data:www-data /var/www/cak_ning_surabaya/storage /var/www/cak_ning_surabaya/bootstrap/cache
+sudo chmod -R 775 /var/www/cak_ning_surabaya/storage /var/www/cak_ning_surabaya/bootstrap/cache
+sudo chown www-data:www-data /var/www/cak_ning_surabaya/database/database.sqlite
+sudo chown -R www-data:www-data /var/www/cak_ning_surabaya/database
+sudo chmod 775 /var/www/cak_ning_surabaya/database
+sudo chmod 664 /var/www/cak_ning_surabaya/database/database.sqlite

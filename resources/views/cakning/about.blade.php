@@ -27,8 +27,6 @@
                 linear-gradient(90deg, rgba(245, 158, 11, 0.02) 50%, transparent 50%);
             background-size: 80px 80px, 40px 40px, 30px 30px;
         }
-
-        
     </style>
 @endsection
 @section('content')
@@ -191,350 +189,338 @@
     @php
         $executives = [
             [
-                'id' => 1,
-                'next' => [2, 4, 7, 9],
-                'previous' => null,
                 'img' => asset('images/executives/ning_zerlin.jpg'),
                 'shortName' => 'Ning Zerlin',
                 'name' => 'Yazerlin Nadila Balqis, S.Bns.',
+                'division' => null,
+                'position' => 'head',
                 'tittle' => 'Ketua Umum',
             ],
             [
-                'id' => 2,
-                'next' => 3,
-                'previous' => 1,
                 'img' => asset('images/executives/ning_nia.jpg'),
                 'shortName' => 'Ning Nia',
                 'name' => 'Nakita Millenia Putri, S.H.',
+                'division' => 'bendahara',
+                'position' => 'head',
                 'tittle' => 'Bendahara Umum',
             ],
             [
-                'id' => 3,
-                'next' => null,
-                'previous' => 2,
                 'img' => asset('images/executives/cak_bryan.jpg'),
                 'shortName' => 'Cak Bryan',
                 'name' => 'Bryan Benjamin Gondowardoyo',
+                'division' => 'bendahara',
+                'position' => 'member',
                 'tittle' => 'Bendahara 1',
             ],
             [
-                'id' => 4,
-                'next' => [5, 6],
-                'previous' => 3,
                 'img' => asset('images/executives/cak_fide.jpg'),
                 'shortName' => 'Cak Fide',
                 'name' => 'Fide Abraham, S. Ikom',
+                'division' => 'sekretaris',
+                'position' => 'head',
                 'tittle' => 'Sekretaris Umum',
             ],
             [
-                'id' => 5,
-                'next' => null,
-                'previous' => 4,
                 'img' => asset('images/executives/ning_olda.jpg'),
                 'shortName' => 'Ning Olda',
                 'name' => 'Rizky Olda Putri Salsabila, S.Ars.',
+                'division' => 'sekretaris',
+                'position' => 'member',
                 'tittle' => 'Sekretaris 1',
             ],
             [
-                'id' => 6,
-                'next' => null,
-                'previous' => 5,
                 'img' => asset('images/executives/ning_sasa.jpg'),
                 'shortName' => 'Ning Sasa',
                 'name' => 'Sabrina Christellia',
+                'division' => 'sekretaris',
+                'position' => 'member',
                 'tittle' => 'Sekretaris 2',
             ],
             [
-                'id' => 7,
-                'next' => 8,
-                'previous' => 1,
                 'img' => asset('images/executives/cak_alvin.jpg'),
                 'shortName' => 'Cak Alvin',
                 'name' => 'Alvin Ananda Siregar, S.M.',
+                'division' => 'internal',
+                'position' => 'head',
                 'tittle' => 'Ketua Bidang Internal',
             ],
             [
-                'id' => 8,
-                'next' => null,
-                'previous' => 7,
-                'img' => '',
-                'shortName' => 'Departemen',
-                'name' => '',
-                'tittle' => 'Diklat & Kesrat',
-            ],
-            [
-                'id' => 9,
-                'next' => 10,
-                'previous' => 1,
                 'img' => asset('images/executives/cak_rama.jpg'),
                 'shortName' => 'Cak Rama',
                 'name' => 'Hartawan Anugerah Ramadhan H',
+                'division' => 'external',
+                'position' => 'head',
                 'tittle' => 'Ketua Bidang External',
             ],
-            [
-                'id' => 10,
-                'next' => null,
-                'previous' => 1,
-                'img' => '',
-                'shortName' => 'Departemen',
-                'name' => '',
-                'tittle' => 'Humas, Marcom & KWU',
-            ],
         ];
     @endphp
 
-    <div class="py-16 bg-white batik-pattern-about-2">
-        <div class="container max-w-screen-lg mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-olive-800 mb-2 text-center">Badan Pengurus Harian</h2>
-            <p class="text-lg text-olive-700 mb-8 text-center">Paguyuban Cak & Ning 2025-2028</p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
-                @foreach ($executives as $ex)
-                    <div
-                        class="bg-merino-50 rounded-xl shadow-md p-6 flex flex-col items-center hover:shadow-lg transition">
-                        <div class="w-24 h-24 mb-4">
-                            @if ($ex['img'])
-                                <img src="{{ $ex['img'] }}" alt="{{ $ex['shortName'] }}"
-                                    class="rounded-full object-cover w-full h-full shadow">
-                            @else
-                                <div
-                                    class="w-full h-full flex items-center justify-center bg-olive-200 rounded-full text-olive-700 font-bold text-xl">
-                                    {{ $ex['shortName'] }}
-                                </div>
-                            @endif
+    <section class="bg-white">
+        <div class="container py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
+            <div class="mx-auto mb-8 max-w-screen-sm lg:mb-16">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-olive-800 text-center">Badan Pengurus Harian
+                </h2>
+                <p class="font-light text-olive-700 sm:text-xl ">Paguyuban Cak & Ning 2025-2028</p>
+            </div>
+
+            <div id="executive-cards" class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                @foreach ($executives as $idx => $ex)
+                    <div class="relative text-center text-gray-500 dark:text-gray-400 hover:bg-olive-100 hover:cursor-pointer p-4 rounded-lg transition-all duration-300 ease-in-out executive-card"
+                        data-idx="{{ $idx }}" style="min-height: 160px;">
+                        <div class="w-1/2">
+                            <div
+                                class="h-36 w-36 flex items-center justify-center mx-auto mb-4 overflow-hidden executive-img transition-all duration-300 ease-in-out">
+                                <img class="w-full h-full object-cover rounded-full" style="object-position: top;"
+                                    src="{{ $ex['img'] }}" alt="{{ $ex['shortName'] }}">
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <h3 class="text-xl font-semibold text-olive-800">{{ $ex['shortName'] }}</h3>
-                            <p class="text-pumpkin-500 font-medium">{{ $ex['tittle'] }}</p>
-                            @if ($ex['name'])
-                                <p class="text-olive-700 text-sm mt-2">{{ $ex['name'] }}</p>
-                            @endif
+                        <div class="w-1/2">
+                            <div class="executive-info transition-all duration-300 ease-in-out">
+                                <h3 class="mb-1 text-2xl font-bold tracking-tight text-olive-800">{{ $ex['shortName'] }}
+                                </h3>
+                                <p class="text-pumpkin-500 font-medium">{{ $ex['tittle'] }}</p>
+                                @if (isset($ex['name']))
+                                    <p class="mt-2 text-olive-700 text-base executive-desc transition-all duration-300 ease-in-out"
+                                        style="display:none;">{{ $ex['name'] }}</p>
+                                @endif
+                            </div>
+                            <button
+                                class=" absolute top-2 right-2 text-olive-800 bg-white rounded-full p-1 shadow hover:bg-olive-200 executive-close transition-all duration-200"
+                                style="display:none;" aria-label="Tutup">
+                                <span class="iconify" data-icon="mdi:close" data-width="24"></span>
+                            </button>
                         </div>
                     </div>
                 @endforeach
             </div>
         </div>
-    </div>
+    </section>
+@section('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.executive-card');
+            let activeIdx = null;
 
-    {{-- -------------------------------------- --}}
-    {{-- STRUKTUR ORGANISASI SECTION --}}
-    {{-- -------------------------------------- --}}
+            function resetCard(card) {
+                card.classList.remove('active', 'bg-olive-100');
+                card.style.gridColumn = '';
+                card.style.display = '';
+                card.style.textAlign = '';
+                card.style.alignItems = '';
+                card.querySelector('.executive-desc')?.style.setProperty('opacity', '0');
+                setTimeout(() => {
+                    card.querySelector('.executive-desc')?.style.setProperty('display', 'none');
+                }, 250);
+                card.querySelector('.executive-img')?.style.setProperty('margin-bottom', '1rem');
+                card.querySelector('.executive-info')?.style.setProperty('margin-left', '');
+                card.querySelector('.executive-close')?.style.setProperty('opacity', '0');
+                setTimeout(() => {
+                    card.querySelector('.executive-close')?.style.setProperty('display', 'none');
+                }, 200);
+            }
 
-    @php
-        $organization = [
-            [
-                'name' => 'Ning Zerlin',
-                'title' => 'Ketua Umum',
-                'image' => asset('images/executives/ning_zerlin.jpg'),
-                'children' => [
+            cards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (e.target.closest('.executive-close')) return;
+
+                    if (activeIdx !== null && activeIdx !== card.dataset.idx) {
+                        const activeCard = document.querySelector('.executive-card.active');
+                        if (activeCard) resetCard(activeCard);
+                        activeIdx = null;
+                    }
+
+                    if (card.classList.contains('active')) return;
+
+                    cards.forEach(c => {
+                        if (c !== card) resetCard(c);
+                    });
+
+                    activeIdx = card.dataset.idx;
+                    card.classList.add('active', 'bg-olive-100');
+                    card.style.gridColumn = 'span 4';
+                    card.style.display = 'flex';
+                    card.style.alignItems = 'center';
+                    card.style.textAlign = 'left';
+
+                    const desc = card.querySelector('.executive-desc');
+                    if (desc) {
+                        desc.style.setProperty('display', 'block');
+                        setTimeout(() => {
+                            desc.style.setProperty('opacity', '1');
+                        }, 10);
+                    }
+                    card.querySelector('.executive-img')?.style.setProperty('margin-bottom', '0');
+                    card.querySelector('.executive-info')?.style.setProperty('margin-left', '2rem');
+                    const closeBtn = card.querySelector('.executive-close');
+                    if (closeBtn) {
+                        closeBtn.style.setProperty('display', 'block');
+                        setTimeout(() => {
+                            closeBtn.style.setProperty('opacity', '1');
+                        }, 10);
+                    }
+
+                    // Scroll the active card into view smoothly after layout changes.
+                    // Use a slight delay so the expansion has settled for accurate scroll position.
+                    setTimeout(() => {
+                        // Prefer centering the card in the viewport.
+                        card.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    }, 120);
+                });
+
+                const closeBtn = card.querySelector('.executive-close');
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        resetCard(card);
+                        activeIdx = null;
+
+                        // After collapsing, ensure the card remains visible (scroll to it).
+                        setTimeout(() => {
+                            card.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'nearest'
+                            });
+                        }, 150);
+                    });
+                }
+            });
+        });
+    </script>
+@endsection
+
+
+
+{{-- -------------------------------------- --}}
+{{-- STRUKTUR ORGANISASI SECTION --}}
+{{-- -------------------------------------- --}}
+
+<section class="bg-merino-50 py-16 batik-pattern-about-3">
+    <div class="container max-w-screen-lg mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-olive-800 mb-4">Struktur Organisasi</h2>
+        <p class="text-lg text-olive-700 mb-12 max-w-3xl mx-auto">
+            Paguyuban dipimpin oleh pengurus yang berpengalaman dan didukung oleh anggota yang terdiri dari para finalis
+            Cak & Ning Surabaya dari berbagai angkatan
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8 mt-12">
+            @php
+                $strukturOrganisasi = [
                     [
-                        'name' => 'Ning Nia',
-                        'title' => 'Bendahara Umum',
-                        'image' => asset('images/executives/ning_nia.jpg'),
-                        'children' => [
-                            [
-                                'name' => 'Cak Bryan',
-                                'title' => 'Bendahara 1',
-                                'image' => asset('images/executives/cak_bryan.jpg'),
-                            ],
-                        ],
+                        'jabatan' => 'Ketua Paguyuban',
+                        'nama' => 'Alumni Cak/Ning Senior',
+                        'desc' => 'Memimpin dan mengkoordinasi seluruh kegiatan paguyuban',
+                        'icon' => 'mdi:account-tie',
                     ],
                     [
-                        'name' => 'Cak Fide',
-                        'title' => 'Sekretaris Umum',
-                        'image' => asset('images/executives/cak_fide.jpg'),
-                        'children' => [
-                            [
-                                'name' => 'Ning Olda',
-                                'title' => 'Sekretaris 1',
-                                'image' => asset('images/executives/ning_olda.jpg'),
-                            ],
-                            [
-                                'name' => 'Ning Sasa',
-                                'title' => 'Sekretaris 2',
-                                'image' => asset('images/executives/ning_sasa.jpg'),
-                            ],
-                        ],
+                        'jabatan' => 'Sekretaris',
+                        'nama' => 'Alumni Cak/Ning',
+                        'desc' => 'Mengelola administrasi dan dokumentasi organisasi',
+                        'icon' => 'mdi:file-document-outline',
                     ],
                     [
-                        'name' => 'Cak Alvin',
-                        'title' => 'Ketua Bidang Internal',
-                        'image' => asset('images/executives/cak_alvin.jpg'),
-                        'children' => [
-                            [
-                                'name' => 'Departemen',
-                                'title' => 'Diklat & Kesrat',
-                                'image' => '',
-                            ],
-                        ],
+                        'jabatan' => 'Bendahara',
+                        'nama' => 'Alumni Cak/Ning',
+                        'desc' => 'Mengelola keuangan dan pelaporan finansial paguyuban',
+                        'icon' => 'mdi:cash',
                     ],
                     [
-                        'name' => 'Cak Rama',
-                        'title' => 'Ketua Bidang External',
-                        'image' => asset('images/executives/cak_rama.jpg'),
-                        'children' => [
-                            [
-                                'name' => 'Departemen',
-                                'title' => 'Humas, Marcom & KWU',
-                                'image' => '',
-                            ],
-                        ],
+                        'jabatan' => 'Koordinator Event',
+                        'nama' => 'Cak/Ning Aktif',
+                        'desc' => 'Mengkoordinasi dan mengelola berbagai acara dan kolaborasi',
+                        'icon' => 'mdi:calendar-star',
                     ],
-                ],
-            ],
-        ];
-    @endphp
+                    [
+                        'jabatan' => 'Humas & Media',
+                        'nama' => 'Cak/Ning Aktif',
+                        'desc' => 'Mengelola komunikasi publik dan media sosial paguyuban',
+                        'icon' => 'mdi:bullhorn',
+                    ],
+                    [
+                        'jabatan' => 'Anggota',
+                        'nama' => 'Seluruh Finalis',
+                        'desc' => 'Para finalis dari berbagai angkatan yang aktif berpartisipasi',
+                        'icon' => 'mdi:account-group',
+                    ],
+                ];
+            @endphp
 
-    <div class="py-16 bg-white batik-pattern-about-2">
-        <div class="container max-w-screen-lg mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-olive-800 mb-2 text-center">Badan Pengurus Harian</h2>
-            <p class="text-lg text-olive-700 mb-8 text-center">Paguyuban Cak & Ning 2025-2028</p>
-            <div class="flex flex-col items-center">
-                <div class="flex flex-col w-fit">Ketua Umum</div>
-
-                <div class="flex flex-row">
-                    <div class="flex flex-col">
-                        <div class="flex">Bendahara Umum</div>
-                        <div class="flex">Bendahara 1</div>
+            @foreach ($strukturOrganisasi as $struktur)
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
+                    <div class="text-pumpkin-500 mb-4">
+                        <span class="iconify" data-icon="{{ $struktur['icon'] }}" data-width="48"></span>
                     </div>
-
-                    
-
-                    <div class="flex flex-col">
-                        <div class="flex">Sekretaris Umum</div>
-                        <div class="flex flex-col md:flex-row">
-                            <div class="flex">Sekretaris 1</div>
-                            <div class="flex">Sekretaris 2</div>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-semibold text-olive-800 mb-2">{{ $struktur['jabatan'] }}</h3>
+                    <h4 class="text-lg text-pumpkin-500 mb-3">{{ $struktur['nama'] }}</h4>
+                    <p class="text-olive-700 text-sm">{{ $struktur['desc'] }}</p>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
+</section>
 
-    <section class="bg-merino-50 py-16 batik-pattern-about-3">
-        <div class="container max-w-screen-lg mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-olive-800 mb-4">Struktur Organisasi</h2>
-            <p class="text-lg text-olive-700 mb-12 max-w-3xl mx-auto">
-                Paguyuban dipimpin oleh pengurus yang berpengalaman dan didukung oleh anggota yang terdiri dari para finalis
-                Cak & Ning Surabaya dari berbagai angkatan
+{{-- -------------------------------------- --}}
+{{-- PENCAPAIAN SECTION --}}
+{{-- -------------------------------------- --}}
+<section class="bg-olive-950 py-16 batik-pattern-about-1">
+    <div class="container max-w-screen-lg mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-merino-50 mb-4">Pencapaian & Prestasi</h2>
+            <p class="text-lg text-merino-200 max-w-3xl mx-auto">
+                Berbagai pencapaian yang telah diraih Paguyuban Cak & Ning Surabaya dalam mempromosikan pariwisata dan
+                budaya Kota Pahlawan
             </p>
+        </div>
 
-            <div class="grid md:grid-cols-3 gap-8 mt-12">
-                @php
-                    $strukturOrganisasi = [
-                        [
-                            'jabatan' => 'Ketua Paguyuban',
-                            'nama' => 'Alumni Cak/Ning Senior',
-                            'desc' => 'Memimpin dan mengkoordinasi seluruh kegiatan paguyuban',
-                            'icon' => 'mdi:account-tie',
-                        ],
-                        [
-                            'jabatan' => 'Sekretaris',
-                            'nama' => 'Alumni Cak/Ning',
-                            'desc' => 'Mengelola administrasi dan dokumentasi organisasi',
-                            'icon' => 'mdi:file-document-outline',
-                        ],
-                        [
-                            'jabatan' => 'Bendahara',
-                            'nama' => 'Alumni Cak/Ning',
-                            'desc' => 'Mengelola keuangan dan pelaporan finansial paguyuban',
-                            'icon' => 'mdi:cash',
-                        ],
-                        [
-                            'jabatan' => 'Koordinator Event',
-                            'nama' => 'Cak/Ning Aktif',
-                            'desc' => 'Mengkoordinasi dan mengelola berbagai acara dan kolaborasi',
-                            'icon' => 'mdi:calendar-star',
-                        ],
-                        [
-                            'jabatan' => 'Humas & Media',
-                            'nama' => 'Cak/Ning Aktif',
-                            'desc' => 'Mengelola komunikasi publik dan media sosial paguyuban',
-                            'icon' => 'mdi:bullhorn',
-                        ],
-                        [
-                            'jabatan' => 'Anggota',
-                            'nama' => 'Seluruh Finalis',
-                            'desc' => 'Para finalis dari berbagai angkatan yang aktif berpartisipasi',
-                            'icon' => 'mdi:account-group',
-                        ],
-                    ];
-                @endphp
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            @php
+                $pencapaian = [
+                    ['angka' => '40+', 'desc' => 'Tahun Berpengalaman', 'icon' => 'mdi:calendar-clock'],
+                    ['angka' => '200+', 'desc' => 'Alumni Cak & Ning', 'icon' => 'mdi:account-multiple'],
+                    ['angka' => '500+', 'desc' => 'Event Berpartisipasi', 'icon' => 'mdi:star'],
+                    ['angka' => '50+', 'desc' => 'Partnership Aktif', 'icon' => 'mdi:handshake'],
+                ];
+            @endphp
 
-                @foreach ($strukturOrganisasi as $struktur)
-                    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-                        <div class="text-pumpkin-500 mb-4">
-                            <span class="iconify" data-icon="{{ $struktur['icon'] }}" data-width="48"></span>
-                        </div>
-                        <h3 class="text-xl font-semibold text-olive-800 mb-2">{{ $struktur['jabatan'] }}</h3>
-                        <h4 class="text-lg text-pumpkin-500 mb-3">{{ $struktur['nama'] }}</h4>
-                        <p class="text-olive-700 text-sm">{{ $struktur['desc'] }}</p>
+            @foreach ($pencapaian as $item)
+                <div class="text-center bg-olive-900 p-6 rounded-xl">
+                    <div class="text-pumpkin-500 mb-4">
+                        <span class="iconify" data-icon="{{ $item['icon'] }}" data-width="48"></span>
                     </div>
-                @endforeach
-            </div>
+                    <h3 class="text-3xl font-bold text-merino-50 mb-2">{{ $item['angka'] }}</h3>
+                    <p class="text-merino-200">{{ $item['desc'] }}</p>
+                </div>
+            @endforeach
         </div>
-    </section>
+    </div>
+</section>
 
-    {{-- -------------------------------------- --}}
-    {{-- PENCAPAIAN SECTION --}}
-    {{-- -------------------------------------- --}}
-    <section class="bg-olive-950 py-16 batik-pattern-about-1">
-        <div class="container max-w-screen-lg mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-merino-50 mb-4">Pencapaian & Prestasi</h2>
-                <p class="text-lg text-merino-200 max-w-3xl mx-auto">
-                    Berbagai pencapaian yang telah diraih Paguyuban Cak & Ning Surabaya dalam mempromosikan pariwisata dan
-                    budaya Kota Pahlawan
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                @php
-                    $pencapaian = [
-                        ['angka' => '40+', 'desc' => 'Tahun Berpengalaman', 'icon' => 'mdi:calendar-clock'],
-                        ['angka' => '200+', 'desc' => 'Alumni Cak & Ning', 'icon' => 'mdi:account-multiple'],
-                        ['angka' => '500+', 'desc' => 'Event Berpartisipasi', 'icon' => 'mdi:star'],
-                        ['angka' => '50+', 'desc' => 'Partnership Aktif', 'icon' => 'mdi:handshake'],
-                    ];
-                @endphp
-
-                @foreach ($pencapaian as $item)
-                    <div class="text-center bg-olive-900 p-6 rounded-xl">
-                        <div class="text-pumpkin-500 mb-4">
-                            <span class="iconify" data-icon="{{ $item['icon'] }}" data-width="48"></span>
-                        </div>
-                        <h3 class="text-3xl font-bold text-merino-50 mb-2">{{ $item['angka'] }}</h3>
-                        <p class="text-merino-200">{{ $item['desc'] }}</p>
-                    </div>
-                @endforeach
-            </div>
+{{-- -------------------------------------- --}}
+{{-- CTA SECTION --}}
+{{-- -------------------------------------- --}}
+<section class="bg-pumpkin-500 py-16 batik-pattern-about-2">
+    <div class="container max-w-screen-md mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-olive-900 mb-6">Bergabung Dengan Kami</h2>
+        <p class="text-lg text-olive-800 mb-8 max-w-2xl mx-auto">
+            Apakah Anda tertarik menjadi bagian dari Cak & Ning Surabaya? Atau ingin berkolaborasi dengan kami?
+            Hubungi kami dan mari bersama mempromosikan keindahan Kota Pahlawan!
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact"
+                class="inline-flex items-center px-8 py-4 bg-olive-800 text-white rounded-full font-semibold shadow hover:bg-olive-700 transition">
+                <span class="iconify mr-2" data-icon="mdi:phone" data-width="24"></span>
+                Hubungi Kami
+            </a>
+            <a href="https://instagram.com/cakningsurabaya" target="_blank"
+                class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-olive-800 text-olive-800 rounded-full font-semibold hover:bg-olive-800 hover:text-white transition">
+                <span class="iconify mr-2" data-icon="mdi:instagram" data-width="24"></span>
+                Follow Instagram
+            </a>
         </div>
-    </section>
-
-    {{-- -------------------------------------- --}}
-    {{-- CTA SECTION --}}
-    {{-- -------------------------------------- --}}
-    <section class="bg-pumpkin-500 py-16 batik-pattern-about-2">
-        <div class="container max-w-screen-md mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-olive-900 mb-6">Bergabung Dengan Kami</h2>
-            <p class="text-lg text-olive-800 mb-8 max-w-2xl mx-auto">
-                Apakah Anda tertarik menjadi bagian dari Cak & Ning Surabaya? Atau ingin berkolaborasi dengan kami?
-                Hubungi kami dan mari bersama mempromosikan keindahan Kota Pahlawan!
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact"
-                    class="inline-flex items-center px-8 py-4 bg-olive-800 text-white rounded-full font-semibold shadow hover:bg-olive-700 transition">
-                    <span class="iconify mr-2" data-icon="mdi:phone" data-width="24"></span>
-                    Hubungi Kami
-                </a>
-                <a href="https://instagram.com/cakningsurabaya" target="_blank"
-                    class="inline-flex items-center px-8 py-4 bg-transparent border-2 border-olive-800 text-olive-800 rounded-full font-semibold hover:bg-olive-800 hover:text-white transition">
-                    <span class="iconify mr-2" data-icon="mdi:instagram" data-width="24"></span>
-                    Follow Instagram
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 @endsection
 @section('scripts')
 
